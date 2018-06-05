@@ -8,7 +8,9 @@ Warning: The appearance of the death chest and hopper may cause some blocks to b
 
 # Installation
 
-To use XHawk87's Death Chests in your game, copy the DeathChests.zip file to the desired world folder, under datapacks (e.g. .minecraft/saves/(world)/datapacks), and restart the game or use the /reload command. 
+To use XHawk87's Death Chests in your game, find an appropriate release from CurseForge for the version of Minecraft you are using: https://minecraft.curseforge.com/projects/xhawk87s-death-chests
+
+Copy the DeathChests-?.zip file to the desired world folder, under datapacks (e.g. .minecraft/saves/(world)/datapacks), and restart the game or use the /reload command. 
 
 See https://minecraft.gamepedia.com/Data_pack for more details.
 
