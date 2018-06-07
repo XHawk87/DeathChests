@@ -8,6 +8,9 @@
 # Reset transfer cooldown to speed up the hopper
 execute if block ~ ~ ~ minecraft:hopper run data merge block ~ ~ ~ {TransferCooldown:1b}
 
+# Make sure all items stay in the hopper
+tp @e[type=minecraft:item,distance=0..2] ~ ~1 ~
+
 # If hopper is done transferring, destroy it
 execute if block ~ ~ ~ minecraft:hopper{Items:[]} run execute unless entity @e[type=minecraft:item,distance=0..2,limit=1] run setblock ~ ~ ~ minecraft:air replace
 
