@@ -19,5 +19,5 @@ setblock ~ ~1 ~ minecraft:hopper{CustomName:"{\"text\":\"§rDeath Chest\"}"} des
 execute as @e[type=minecraft:item,distance=0..2] run data merge entity @s {Motion:[0d,0d,0d],Invulnerable:1b}
 
 # Place a marker on the hopper so we can increase it's transfer speed
-summon armor_stand ~ ~ ~ {Tags:["XDCHopper"],NoGravity:1b,Invisible:0,Invulnerable:1,PersistenceRequired:1,Marker:1}
+summon armor_stand ~ ~ ~ {Tags:["XDCHopper"],NoGravity:1b,Invisible:1,Invulnerable:1,PersistenceRequired:1,Marker:1}
 execute as @e[tag=XDCHopper,limit=1] run execute at @s run function xhawk87:death_chests/setup_hopper_marker
