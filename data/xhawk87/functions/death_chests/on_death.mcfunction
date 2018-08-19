@@ -5,8 +5,13 @@
 # Licensed under GNU General Public License 3.0 or later. 
 # Some rights reserved. See LICENSE.
 
-# Reset the death tracker so it doesn't repeatedly trigger
-scoreboard players reset @s XDCDeaths
+# Mark the player as currently dead to avoid repeating this trigger
+tag @s add XDCIsDead
+
+# Record last player death location for later use
+execute store result score @s XDCPosX run data get entity @s Pos[0] 1
+execute store result score @s XDCPosY run data get entity @s Pos[1] 1
+execute store result score @s XDCPosZ run data get entity @s Pos[2] 1
 
 # Try to spawn a death chest as close to their feet as possible
 setblock ~ ~ ~ minecraft:chest[type=left]{CustomName:"{\"text\":\"§rDeath Chest\"}"} destroy 

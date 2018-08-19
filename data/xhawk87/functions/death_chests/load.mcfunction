@@ -5,12 +5,23 @@
 # Licensed under GNU General Public License 3.0 or later. 
 # Some rights reserved. See LICENSE.
 
+### Player properties ###
+
+# Track player last death location
+scoreboard objectives add XDCPosX dummy
+scoreboard objectives add XDCPosY dummy
+scoreboard objectives add XDCPosZ dummy
+
 # Track player deaths
 scoreboard objectives add XDCDeaths deathCount
 
+# tag XDCIsDead marks a player as currently dead and not yet respawned
+
+### Armour Stand properties ###
+
+# tag XDCHopper identifies an armour stand as a marker for the location of a death chest hopper
+
+### Misc ###
+
 # Set up temporary variables
 scoreboard objectives add temp dummy
-
-# Store literal numbers for arithmetic operations
-scoreboard objectives add Literal dummy
-scoreboard players set 10 Literal 10
