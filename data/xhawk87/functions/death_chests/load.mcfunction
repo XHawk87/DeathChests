@@ -21,6 +21,8 @@ scoreboard objectives add XDCDeaths deathCount
 
 # tag XDCHopper identifies an armour stand as a marker for the location of a death chest hopper
 
+# tag XDCAllowStack allows a hopper to stack chests upwards if it runs out of space in the first
+
 ### Misc ###
 
 # Set up temporary variables

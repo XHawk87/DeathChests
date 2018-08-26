@@ -13,16 +13,17 @@ execute store result score @s XDCPosX run data get entity @s Pos[0] 1
 execute store result score @s XDCPosY run data get entity @s Pos[1] 1
 execute store result score @s XDCPosZ run data get entity @s Pos[2] 1
 
-# Try to spawn a death chest as close to their feet as possible
-setblock ~ ~ ~ minecraft:chest[type=left]{CustomName:"{\"text\":\"§rDeath Chest\"}"} destroy 
-setblock ~1 ~ ~ minecraft:chest[type=right]{CustomName:"{\"text\":\"§rDeath Chest\"}"} destroy 
-
-# Spawn a hopper at their head
-setblock ~ ~1 ~ minecraft:hopper{CustomName:"{\"text\":\"§rDeath Chest\"}"} destroy 
-
 # Make all nearby items invulnerable and still
 execute as @e[type=minecraft:item,distance=0..2] run data merge entity @s {Motion:[0d,0d,0d],Invulnerable:1b}
 
-# Place a marker on the hopper so we can increase it's transfer speed
-summon armor_stand ~ ~ ~ {Tags:["XDCHopper"],NoGravity:1b,Invisible:1,Invulnerable:1,PersistenceRequired:1,Marker:1}
-execute as @e[tag=XDCHopper,limit=1] run execute at @s run function xhawk87:death_chests/setup_hopper_marker
+# Count the number of item stacks to see how many chests we need
+scoreboard players set Count temp 0
+
+execute as @e[type=minecraft:item,distance=0..2] run scoreboard players add Count temp 1
+
+# If there are more than 27, a double-chest is needed, otherwise a single will suffice
+execute if score Count temp matches 28.. run function xhawk87:death_chests/spawn_double_chest
+execute if score Count temp matches ..27 run function xhawk87:death_chests/spawn_single_chest
+
+# Reset variables to avoid scoreboard clutter
+scoreboard players reset Count temp
