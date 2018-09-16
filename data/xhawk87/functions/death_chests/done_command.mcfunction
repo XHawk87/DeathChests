@@ -5,5 +5,5 @@
 # Licensed under GNU General Public License 3.0 or later. 
 # Some rights reserved. See LICENSE.
 
-execute store result score Health temp run data get entity @s Health 1
-execute if score Health temp matches 1.. run function xhawk87:death_chests/on_respawn
+execute if score CommandFeedback XDCGlobals matches 1 run gamerule sendCommandFeedback true
+scoreboard players set InCommand XDCGlobals 0

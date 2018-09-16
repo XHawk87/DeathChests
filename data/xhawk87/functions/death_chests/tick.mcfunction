@@ -5,6 +5,9 @@
 # Licensed under GNU General Public License 3.0 or later. 
 # Some rights reserved. See LICENSE.
 
+# Reset sendCommandFeedback to default after finishing player-executed function commands
+execute if score InCommand XDCGlobals matches 1 run function xhawk87:death_chests/done_command
+
 # Prevent death chests from dropping as items
 kill @e[type=minecraft:item,nbt={Item:{tag:{display:{Name:"{\"text\":\"§rDeath Chest\"}"}}}}]
 

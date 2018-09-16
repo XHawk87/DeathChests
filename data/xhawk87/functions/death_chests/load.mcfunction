@@ -27,3 +27,13 @@ scoreboard objectives add XDCDeaths deathCount
 
 # Set up temporary variables
 scoreboard objectives add temp dummy
+
+# Set up admin settings
+scoreboard objectives add XDCSettings dummy
+
+# Set up global variables
+scoreboard objectives add XDCGlobals dummy
+
+### Installation ###
+
+execute if score FirstRun XDCSettings matches 0 run function xhawk87:death_chests/install

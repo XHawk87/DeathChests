@@ -10,4 +10,4 @@ scoreboard players reset @s XDCDeaths
 tag @s remove XDCIsDead
 
 # Send a message to the player giving them their last death coordinates
-tellraw @s [{"text":"Your death chest is at ("},{"score":{"name":"@s","objective":"XDCPosX"}},{"text":", "},{"score":{"name":"@s","objective":"XDCPosY"}},{"text":", "},{"score":{"name":"@s","objective":"XDCPosZ"}},{"text":")"}]
+execute if score DeathResNotice XDCSettings matches 1 run tellraw @s [{"text":"Your death chest is at ("},{"score":{"name":"@s","objective":"XDCPosX"}},{"text":", "},{"score":{"name":"@s","objective":"XDCPosY"}},{"text":", "},{"score":{"name":"@s","objective":"XDCPosZ"}},{"text":")"}]
